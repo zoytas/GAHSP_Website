@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page</title>
+    <style>
+        /* CSS for styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 800px;
+            margin: 200px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .navbar {
+    background-color: #f8f8f8; /* Light grey background */
+    overflow: hidden;
+    position: fixed; /* Fixed at the top */
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid #e7e7e7;
+  }
+  .navbar a {
+    float: left;
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .navbar a:hover {
+    background-color: #ddd; /* Grey background on hover */
+    color: black;
+  }
+  /* Currently active menu item */
+  .navbar a.active {
+    background-color: #4CAF50; /* Add a green color to the "active/current" link */
+    color: white;
+  }
+  .navbar-right {
+    float: right;
+  }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a class="active" href="#home">Team GAHSP</a>
+        <a href="#map">GAHSP Map</a>
+        <a href="#visualization">Machine Learning Visualization</a>
+        <div class="navbar-right">
+          <a href="test.html">Sign In</a>
+        </div>
+      </div>  
+
+    <div class="container">
+        <h1>Who We Are</h1>
+        <p>We are Team GAHSP (Generating an Algorithm for Hot Spots 
+            Policing). We aim to rectify the bias present within the Predictive 
+            Policing algorithms currently in use by police stations across the
+            country. These algorithms currently are fed biased data, prioritize
+            low level offenses, and reinforce racial biases.</p>
+        <p>Our goal is to rectify these biases. To do so, we will obtain crime
+            data from various U.S. cities, cleanse that data, and then train an
+            algorithm based on the cleansed data. Additionally, we intend to
+            analyze existing Predictive Policing algorithms to note where they 
+            may introduce bias in order to avoid it ourselves.</p>
+    </div>
+</body>
+</html>
