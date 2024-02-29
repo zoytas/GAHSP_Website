@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Map Page</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+  }
+  #map {
+    height: 30%;
+    width: 100%;
+  }
+  .controls {
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    z-index: 5;
+  }
+  .navbar {
+    background-color: #f8f8f8; /* Light grey background */
+    overflow: hidden;
+    position: fixed; /* Fixed at the top */
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid #e7e7e7;
+  }
+  .navbar a {
+    float: left;
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .navbar a:hover {
+    background-color: #ddd; /* Grey background on hover */
+    color: black;
+  }
+  /* Currently active menu item */
+  .navbar a.active {
+    background-color: #4CAF50; /* Add a green color to the "active/current" link */
+    color: white;
+  }
+  .navbar-right {
+    float: right;
+  }
+</style>
+</head>
+<body>
+
+<!-- Your navigation bar here -->
+
+<div class="navbar">
+    <a href="home.html">Team GAHSP</a>
+    <a class="active" href="map.html">GAHSP Map</a>
+    <a href="#visualization">Machine Learning Visualization</a>
+    <div class="navbar-right">
+      <a href="#signin">Sign In</a>
+    </div>
+  </div>  
+
+<div id="map"></div>
+
+<div class="controls">
+  <label for="location">Location</label>
+  <input type="text" id="location" placeholder="Enter location">
+  
+  <label for="crime">Type of Crime</label>
+  <select id="crime">
+    <option value="all">All</option>
+    <!-- Add more options here -->
+  </select>
+  
+  <input type="checkbox" id="policeStations"> Show police stations/precincts
+  <input type="checkbox" id="heatmap"> Show heatmap
+  
+  <button id="goButton">Go</button>
+</div>
+
+<script>
+  // Add your JavaScript for the map here
+  function initMap() {
+  // The map, centered at a default location
+  var defaultLocation = {lat: -34.397, lng: 150.644};
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 8, center: defaultLocation});
+
+  // The marker, positioned at the default location
+  var marker = new google.maps.Marker({position: defaultLocation, map: map});
+}
+
+// Geocoding and recentering the map
+document.getElementById('goButton').addEventListener('click', function() {
+  var geocoder = new google.maps.Geocoder();
+  var address = document.getElementById('location').value;
+  geocoder.geocode({'address': address}, function(results, status) {
+    if (status === 'OK') {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+        map: map,
+        position: results[0].geometry.location
+      });
+      // Place additional markers based on the type of crime or other parameters
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+});
+
+// Call this function when the page loads
+initMap();
+</script>
+
+</body>
+</html>
