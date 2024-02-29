@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .login-container {
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .login-container h2 {
+    text-align: center;
+  }
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+  }
+  .login-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .social-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .social-login button {
+    border: none;
+    margin: 0 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .social-login img {
+    width: 20px;
+    height: 20px;
+  }
+  .or-separator {
+    text-align: center;
+    margin: 20px 0;
+  }
+  .or-separator hr {
+    display: inline-block;
+    width: 40%;
+  }
+  .navbar {
+    background-color: #f8f8f8; /* Light grey background */
+    overflow: hidden;
+    position: fixed; /* Fixed at the top */
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid #e7e7e7;
+  }
+  .navbar a {
+    float: left;
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .navbar a:hover {
+    background-color: #ddd; /* Grey background on hover */
+    color: black;
+  }
+  /* Currently active menu item */
+  .navbar a.active {
+    background-color: #4CAF50; /* Add a green color to the "active/current" link */
+    color: white;
+  }
+  .navbar-right {
+    float: right;
+  }
+</style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a class="active" href="#home">Team GAHSP</a>
+    <a href="#map">GAHSP Map</a>
+    <a href="#visualization">Machine Learning Visualization</a>
+    <div class="navbar-right">
+      <a href="#signin">Sign In</a>
+    </div>
+  </div>  
+
+<div class="login-container">
+  <input type="email" placeholder="Email Address">
+  <button class="login-btn">Continue</button>
+  <button class="login-btn" style="background-color: #f7f7f7; color: black; margin-top: 10px;">Register New Account</button>
+  
+  <div class="or-separator">
+    <hr> OR <hr>
+  </div>
+  
+  <div class="social-login">
+    <button style="background-color: #db4437;"><img src="google-icon.png" alt="Google"> Continue With Google</button>
+    <button style="background-color: #3b5998;"><img src="facebook-icon.png" alt="Facebook"> Continue With Facebook</button>
+  </div>
+</div>
+
+</body>
+</html>
