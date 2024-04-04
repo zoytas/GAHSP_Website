@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sample Page</title>
+        <style>
+            /* CSS for styling */
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f2f2f2;
+                height: 100%;
+            }
+            .container {
+                max-width: 800px;
+                margin: 200px auto;
+                padding: 0 20px;
+                text-align: center;
+            }
+            .map-container {
+                position: relative;
+                width: 100%;
+                height: 100vh; /* Adjust this value to control the map height */
+            }
+            .map-container iframe {
+                position: absolute;
+                top: 50px; /* Adjust this value to control how low the map starts */
+                left: 0;
+                width: 100%;
+                height: calc(100% - 50px); /* Adjust the height to take into account the top offset */
+            }
+            h1 {
+                font-size: 36px;
+                color: #333;
+                margin-bottom: 20px;
+            }
+            p {
+                font-size: 18px;
+                color: #666;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+            .navbar {
+        background-color: #f8f8f8; /* Light grey background */
+        overflow: hidden;
+        position: fixed; /* Fixed at the top */
+        top: 0;
+        width: 100%;
+        border-bottom: 1px solid #e7e7e7;
+      }
+      .navbar a {
+        float: left;
+        display: block;
+        color: #666;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      .navbar a:hover {
+        background-color: #ddd; /* Grey background on hover */
+        color: black;
+      }
+      /* Currently active menu item */
+      .navbar a.active {
+        background-color: #4CAF50; /* Add a green color to the "active/current" link */
+        color: white;
+      }
+      .navbar-right {
+        float: right;
+      }
+      .controls {
+        position: absolute;
+        bottom: 10px;
+        left: 70px;
+        background: white;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        z-index: 5;
+    }
+        </style>
+    </head>
+<body>
+
+    <div class="navbar">
+        <a class="active" href="home.html">Team GAHSP</a>
+        <a href="map.html">GAHSP Map</a>
+        <a href="visualization">Machine Learning Visualization</a>
+        <div class="navbar-right">
+          <a href="test.html">Sign In</a>
+        </div>
+      </div> 
+
+      <div class="map-container">
+        <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDrGu2gZ1HQ0r1Z930POH1Hi9O6ZctuVd4&q=Brendan+Iribe+Center+for+Computer+Science+and+Engineering,College+Park+MD"
+            allowfullscreen></iframe>
+    </div>
+
+    <div class="controls">
+        <label for="location">Location</label>
+        <input type="text" id="location" placeholder="Enter location">
+        
+        <label for="crime">Type of Crime</label>
+        <select id="crime">
+          <option value="all">All</option>
+      
+        </select>
+        
+        <input type="checkbox" id="policeStations"> Show police stations/precincts
+        <input type="checkbox" id="heatmap"> Show heatmap
+        
+        <button id="goButton">Go</button>
+      </div>
+</body>
+</html>

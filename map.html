@@ -57,6 +57,24 @@
   .navbar-right {
     float: right;
   }
+  .container {
+                max-width: 800px;
+                margin: 200px auto;
+                padding: 0 20px;
+                text-align: center;
+            }
+  .map-container {
+                position: relative;
+                width: 100%;
+                height: 100vh; /* Adjust this value to control the map height */
+            }
+            .map-container iframe {
+                position: absolute;
+                top: 50px; /* Adjust this value to control how low the map starts */
+                left: 0;
+                width: 100%;
+                height: calc(100% - 50px); /* Adjust the height to take into account the top offset */
+            }
 </style>
 </head>
 <body>
@@ -81,13 +99,19 @@
   <label for="crime">Type of Crime</label>
   <select id="crime">
     <option value="all">All</option>
-    <!-- Add more options here -->
+
   </select>
   
   <input type="checkbox" id="policeStations"> Show police stations/precincts
   <input type="checkbox" id="heatmap"> Show heatmap
   
   <button id="goButton">Go</button>
+</div>
+
+<div class="map-container">
+  <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDrGu2gZ1HQ0r1Z930POH1Hi9O6ZctuVd4&q=Space+Needle,Seattle+WA"
+      allowfullscreen></iframe>
 </div>
 
 <script>
