@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+.container {
+    max-width: 800px;
+    margin: 200px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.navbar {
+background-color: #f8f8f8; /* Light grey background */
+overflow: hidden;
+position: fixed; /* Fixed at the top */
+top: 0;
+width: 100%;
+border-bottom: 1px solid #e7e7e7;
+}
+.navbar a {
+float: left;
+display: block;
+color: #666;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+.navbar a:hover {
+background-color: #ddd; /* Grey background on hover */
+color: black;
+}
+/* Currently active menu item */
+.navbar a.active {
+background-color: #4CAF50; /* Add a green color to the "active/current" link */
+color: white;
+}
+.navbar-right {
+float: right;
+}
